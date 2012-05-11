@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Logistics" default="build">
+    <target name="build" depends="phpab"/>
+    <target name="phpab" description="Generate autoloader scripts">
+        <exec executable="phpab">
+            <arg value="--output" />
+            <arg path="${basedir}/src/libs/dhl.php" />
+            <arg value="--template" />
+            <arg path="${basedir}/build/src_libs_dhl.php.in" />
+            <arg path="${basedir}/src" />
+        </exec>
+        <exec executable="phpab">
+            <arg value="--output" />
+            <arg path="${basedir}/tests/libs/dhl.php" />
+            <arg value="--template" />
+            <arg path="${basedir}/build/tests_libs_dhl.php.in" />
+            <arg path="${basedir}/tests" />
+        </exec>
+    </target>
+</project>
