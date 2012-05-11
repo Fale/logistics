@@ -1,6 +1,4 @@
 <?php
-require( 'curriers/dhl.php' );
-
 require_once 'PHPUnit/Framework.php';
  
 class ArrayTest extends PHPUnit_Framework_TestCase
