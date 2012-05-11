@@ -1,6 +1,32 @@
 <?php
 require( 'curriers/dhl.php' );
 
+require_once 'PHPUnit/Framework.php';
+ 
+class ArrayTest extends PHPUnit_Framework_TestCase
+{
+    public function testNewArrayIsEmpty()
+    {
+        // Create the Array fixture.
+        $fixture = array();
+ 
+        // Assert that the size of the Array fixture is 0.
+        $this->assertEquals(0, sizeof($fixture));
+    }
+ 
+    public function testArrayContainsAnElement()
+    {
+        // Create the Array fixture.
+        $fixture = array();
+ 
+        // Add an element to the Array fixture.
+        $fixture[] = 'Element';
+ 
+        // Assert that the size of the Array fixture is 1.
+        $this->assertEquals(1, sizeof($fixture));
+    }
+}
+/*
 //$data['debug'] = 1;
 
 $data['Username'] = "radius";
@@ -15,12 +41,12 @@ $data['OrigStreetLine'] = "Via Tolstoj, 86";
 $data['OrigCountryId'] = "IT";
 $data['OrigPostal'] = "20098";
 $data['OrigCity'] = "San Giuliano Milanese";
-/*
+
 $data['OrigStreetLine'] = "Kemp House, 152-160 City Rd";
 $data['OrigCountryId'] = "GB";
 $data['OrigPostal'] = "EC1V 2NX";
 $data['OrigCity'] = "London";
-*/
+
 
 $data['DestPersonName'] = "Fabio Locati";
 $data['DestCompanyName'] = "Ship and Sale Ltd";
@@ -32,13 +58,13 @@ $data['DestCountryId'] = "IT";
 $data['DestPostal'] = "20090";
 $data['DestCity'] = "Segrate";
 $data['StateOrProvinceCode'] = "MI";
-/*
+
 $data['DestStreetLine'] = "Kemp House, 152-160 City Rd";
 $data['DestCountryId'] = "GB";
 $data['DestPostal'] = "EC1V 2NX";
 $data['DestCity'] = "London";
 $data['StateOrProvinceCode'] = "Greater London";
- */
+
 $data['ShipTimeStamp'] = "2012-05-10T12:00:00GMT+01:00";
 $data['Documents'] = "0";
 //$data['AccountID'] = "128948309";
@@ -48,5 +74,5 @@ $data['Packages']['1'] = Array( 'Weight' => '1.0', 'Length' => '21', 'Width' => 
 
 $dhl = new Dhlws( $data );
 print_r( $dhl->quote() ); 
-//print_r( $dhl->shipment() ); 
+//print_r( $dhl->shipment() ); */
 ?>
