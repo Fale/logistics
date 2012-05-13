@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit bootstrap="tests/libs/dhl.php" backupGlobals="false"
-    backupStaticAttributes="false" strict="true" verbose="true">
+    backupStaticAttributes="false" strict="false" verbose="true">
     <testsuite name="Dhl">
         <directory>tests/libs/</directory>
     </testsuite>
