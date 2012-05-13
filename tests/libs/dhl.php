@@ -53,6 +53,7 @@ class Dhl extends PHPUnit_Framework_TestCase
         print_r( $data );
         $dhl = new Dhlws( $data );
         $d = $dhl->quote();
+        print_r( $d );
         $this->assertNotEmpty( $d );
     }
  
