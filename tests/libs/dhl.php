@@ -1,5 +1,5 @@
 <?php
-class ArrayTest extends PHPUnit_Framework_TestCase
+class Dhl extends PHPUnit_Framework_TestCase
 {
     public function testNewArrayIsEmpty()
     {
