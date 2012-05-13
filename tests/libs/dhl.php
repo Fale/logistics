@@ -4,7 +4,7 @@ class Dhl extends PHPUnit_Framework_TestCase
 {
     public function testQuote()
     {
-        //$data['debug'] = 1;
+        $data['debug'] = 1;
 
         $data['Username'] = "radius";
         $data['Password'] = "c3Rm3ll!-";
