@@ -34,7 +34,11 @@ class Dhl extends PHPUnit_Framework_TestCase
                                   'Length' => '21',
                                   'Width' => '30',
                                   'Height' => '6' );
-
+    public $genericData = Array( 'ShipTimeStamp' => '2012-05-15T12:00:00GMT+01:00',
+                                 'Documents' => '0',
+                                 //'AccountID' => '771050622',
+                                 'AccountID' => '105891642',
+                                 'CustomerReferences' => '3-2012-1712' );
     public function testQuote()
     {
         $data = Array();
@@ -44,12 +48,7 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data = array_merge( $data, $this->originItaly );
         $data = array_merge( $data, $this->destinationItaly );
         $data['Packages'] = $this->packagesLite;
-
-        $data['ShipTimeStamp'] = "2012-05-15T12:00:00GMT+01:00";
-        $data['Documents'] = "0";
-        //$data['AccountID'] = "128948309";
-        $data['AccountID'] = "105891642";
-        $data['CustomerReferences'] = "3-2012-1712";
+        $data = array_merge( $data, $this->genericData );
 
         $dhl = new Dhlws( $data );
         $d = $dhl->quote();
