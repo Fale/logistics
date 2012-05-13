@@ -34,13 +34,13 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data['DestPostal'] = "20090";
         $data['DestCity'] = "Segrate";
         $data['StateOrProvinceCode'] = "MI";
-
+/*
         $data['DestStreetLine'] = "Kemp House, 152-160 City Rd";
         $data['DestCountryId'] = "GB";
         $data['DestPostal'] = "EC1V 2NX";
         $data['DestCity'] = "London";
         $data['StateOrProvinceCode'] = "Greater London";
-
+ */
         $data['ShipTimeStamp'] = "2012-05-10T12:00:00GMT+01:00";
         $data['Documents'] = "0";
         //$data['AccountID'] = "128948309";
