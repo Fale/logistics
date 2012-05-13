@@ -210,6 +210,7 @@ class Dhlws
         $array = xmlstr_to_array( $data );
         if( $this->debug )
             print_r( $array );
+        return $array;
         $xml = $array['SOAP-ENV:Body']['rateresp:RateResponse']['Provider']['Service'];
         foreach( $xml as $id => $service )
         {
