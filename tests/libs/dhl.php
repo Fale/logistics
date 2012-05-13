@@ -36,13 +36,15 @@ class Dhl extends PHPUnit_Framework_TestCase
                                   'Height' => '6' );
     public $genericData = Array( 'ShipTimeStamp' => '2012-05-15T12:00:00GMT+01:00',
                                  'Documents' => '0',
-                                 //'AccountID' => '771050622',
-                                 'AccountID' => '105891642',
                                  'CustomerReferences' => '3-2012-1712' );
-    public function testQuote()
+    public $accountIDCamion = '771050622';
+    public $accountIDExpress = '105891642';
+
+    public function testQuoteIt2It()
     {
         $data = Array();
         $data['Debug'] = 1;
+        $data['AccountID'] = $this->accountIDExpress;
         $data = array_merge( $data, $this->credentials );
         $data = array_merge( $data, $this->originData );
         $data = array_merge( $data, $this->destinationData );
@@ -56,16 +58,40 @@ class Dhl extends PHPUnit_Framework_TestCase
         $this->assertNotEmpty( $d );
     }
  
-    public function testArrayContainsAnElement()
+    public function testQuoteIt2Uk()
     {
-        // Create the Array fixture.
-        $fixture = array();
- 
-        // Add an element to the Array fixture.
-        $fixture[] = 'Element';
- 
-        // Assert that the size of the Array fixture is 1.
-        $this->assertEquals(1, sizeof($fixture));
+        $data = Array();
+        $data['Debug'] = 1;
+        $data['AccountID'] = $this->accountIDExpress;
+        $data = array_merge( $data, $this->credentials );
+        $data = array_merge( $data, $this->originData );
+        $data = array_merge( $data, $this->destinationData );
+        $data = array_merge( $data, $this->originItaly );
+        $data = array_merge( $data, $this->destinationUK );
+        $data['Packages']['1'] = $this->packagesLite;
+        $data = array_merge( $data, $this->genericData );
+        print_r( $data );
+        $dhl = new Dhlws( $data );
+        $d = $dhl->quote();
+        $this->assertNotEmpty( $d );
+    }
+
+    public function testQuoteIt2UkCamion()
+    {
+        $data = Array();
+        $data['Debug'] = 1;
+        $data['AccountID'] = $this->accountIDCamion;
+        $data = array_merge( $data, $this->credentials );
+        $data = array_merge( $data, $this->originData );
+        $data = array_merge( $data, $this->destinationData );
+        $data = array_merge( $data, $this->originItaly );
+        $data = array_merge( $data, $this->destinationUK );
+        $data['Packages']['1'] = $this->packagesLite;
+        $data = array_merge( $data, $this->genericData );
+        print_r( $data );
+        $dhl = new Dhlws( $data );
+        $d = $dhl->quote();
+        $this->assertNotEmpty( $d );
     }
 }
 ?>
