@@ -2,13 +2,12 @@
 require( "src/libs/dhl.php" );
 class Dhl extends PHPUnit_Framework_TestCase
 {
+    public $credentials['Username'] = "radius";
+    public $credentials['Password'] = "c3Rm3ll!-";
+
     public function testQuote()
     {
-        $data['debug'] = 1;
-
-        $data['Username'] = "radius";
-        $data['Password'] = "c3Rm3ll!-";
-
+        $data = $this->$credentials;
         $data['OriginPersonName'] = "Ferdinando Cermelli";
         $data['OriginCompanyName'] = "Radius di Ferdinando Cermelli";
         $data['OriginPhoneNumber'] = "+393482668888";
@@ -48,10 +47,10 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data['CustomerReferences'] = "3-2012-1712";
         $data['Packages']['1'] = Array( 'Weight' => '1.0', 'Length' => '21', 'Width' => '30', 'Height' => '6' );
 
-        print_r( $data );
+//        print_r( $data );
         $dhl = new Dhlws( $data );
         $d = $dhl->quote();
-        print_r( $d ); 
+        //print_r( $d ); 
         //print_r( $dhl->shipment() ); */
         $this->assertNotEmpty( $d );
     }
