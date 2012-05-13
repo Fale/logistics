@@ -2,7 +2,7 @@
 <phpunit bootstrap="tests/libs/dhl.php" backupGlobals="false"
     backupStaticAttributes="false" strict="true" verbose="true">
     <testsuite name="Dhl">
-        <directory suffix="Test.php">tests/libs/</directory>
+        <directory>tests/libs/</directory>
     </testsuite>
     <logging>
         <log type="coverage-clover" target="build/logs/clover.xml"/>
