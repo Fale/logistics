@@ -42,6 +42,7 @@ class Dhl extends PHPUnit_Framework_TestCase
     public function testQuote()
     {
         $data = Array();
+        $data['Debug'] = 1;
         $data = array_merge( $data, $this->credentials );
         $data = array_merge( $data, $this->originData );
         $data = array_merge( $data, $this->destinationData );
