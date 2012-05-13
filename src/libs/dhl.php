@@ -1,5 +1,5 @@
 <?php
-require( 'utility/xmlstr_to_array.php' );
+require( 'xmlstr_to_array.php' );
 
 class Dhlws
 {
