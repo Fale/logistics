@@ -4,15 +4,16 @@ class Dhl extends PHPUnit_Framework_TestCase
 {
     public $credentials = Array ('Username' => 'radius', 
                                  'Password' => 'c3Rm3ll!-' );
+    public $originData = Array( 'OriginPersonName' => 'Ferdinando Cermelli',
+                                'OriginCompanyName' => 'Radius di Ferdinando Cermelli',
+                                'OriginPhoneNumber' => '+393482668888',
+                                'OriginEmailAddress' => 'f.cermelli@snds.co' );
 
     public function testQuote()
     {
-        $data = $this->credentials;
-        $data['OriginPersonName'] = "Ferdinando Cermelli";
-        $data['OriginCompanyName'] = "Radius di Ferdinando Cermelli";
-        $data['OriginPhoneNumber'] = "+393482668888";
-        $data['OriginEmailAddress'] = "f.cermelli@snds.co";
-
+        $data = Array();
+        $data = array_combine( $data, $credentials );
+        $data = array_combine( $data, $originData );
         $data['OrigStreetLine'] = "Via Tolstoj, 86";
         $data['OrigCountryId'] = "IT";
         $data['OrigPostal'] = "20098";
