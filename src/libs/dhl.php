@@ -9,6 +9,7 @@ class Dhlws
 
     public function Dhlws( $data )
     {
+        date_default_timezone_set('UTC');
         $this->data = $data;
         if( array_key_exists( 'debug', $data ) )
             $this->debug = $data['debug'];
