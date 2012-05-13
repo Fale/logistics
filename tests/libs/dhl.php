@@ -18,12 +18,12 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data['OrigCountryId'] = "IT";
         $data['OrigPostal'] = "20098";
         $data['OrigCity'] = "San Giuliano Milanese";
-
+/*
         $data['OrigStreetLine'] = "Kemp House, 152-160 City Rd";
         $data['OrigCountryId'] = "GB";
         $data['OrigPostal'] = "EC1V 2NX";
         $data['OrigCity'] = "London";
-
+ */
         $data['DestPersonName'] = "Fabio Locati";
         $data['DestCompanyName'] = "Ship and Sale Ltd";
         $data['DestPhoneNumber'] = "+393482668888";
