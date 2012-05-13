@@ -41,7 +41,7 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data['DestCity'] = "London";
         $data['StateOrProvinceCode'] = "Greater London";
  */
-        $data['ShipTimeStamp'] = "2012-05-10T12:00:00GMT+01:00";
+        $data['ShipTimeStamp'] = "2012-05-15T12:00:00GMT+01:00";
         $data['Documents'] = "0";
         //$data['AccountID'] = "128948309";
         $data['AccountID'] = "105891642";
