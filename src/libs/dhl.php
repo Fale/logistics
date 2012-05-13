@@ -210,7 +210,7 @@ class Dhlws
         $array = xmlstr_to_array( $data );
         if( $this->debug )
             print_r( $array );
-        if( ! array_key_exists( 'Service', $array['SOAP-ENV:Body']['rateresp:RateResponse']['Provider'] )
+        if( ! array_key_exists( 'Service', $array['SOAP-ENV:Body']['rateresp:RateResponse']['Provider'] ) )
             return $array;
         $xml = $array['SOAP-ENV:Body']['rateresp:RateResponse']['Provider']['Service'];
         foreach( $xml as $id => $service )
