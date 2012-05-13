@@ -1,4 +1,5 @@
 <?php
+require( "../../src/libs/dhl.php" );
 class Dhl extends PHPUnit_Framework_TestCase
 {
     public function testQuote()
