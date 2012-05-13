@@ -7,7 +7,7 @@ class Dhl extends PHPUnit_Framework_TestCase
 
     public function testQuote()
     {
-        $data = $this->$credentials;
+        $data = $this->credentials;
         $data['OriginPersonName'] = "Ferdinando Cermelli";
         $data['OriginCompanyName'] = "Radius di Ferdinando Cermelli";
         $data['OriginPhoneNumber'] = "+393482668888";
