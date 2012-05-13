@@ -48,6 +48,7 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data['CustomerReferences'] = "3-2012-1712";
         $data['Packages']['1'] = Array( 'Weight' => '1.0', 'Length' => '21', 'Width' => '30', 'Height' => '6' );
 
+        print_r( $data );
         $dhl = new Dhlws( $data );
         $d = $dhl->quote();
         print_r( $d ); 
