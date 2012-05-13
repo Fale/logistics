@@ -3,7 +3,7 @@ require( "src/libs/dhl.php" );
 class Dhl extends PHPUnit_Framework_TestCase
 {
     public $credentials = Array ('Username' => 'radius', 
-                                 'Password' = 'c3Rm3ll!-' );
+                                 'Password' => 'c3Rm3ll!-' );
 
     public function testQuote()
     {
