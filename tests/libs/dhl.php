@@ -48,12 +48,11 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data = array_merge( $data, $this->destinationData );
         $data = array_merge( $data, $this->originItaly );
         $data = array_merge( $data, $this->destinationItaly );
-        $data['Packages'] = $this->packagesLite;
+        $data['Packages']['1'] = $this->packagesLite;
         $data = array_merge( $data, $this->genericData );
         print_r( $data );
         $dhl = new Dhlws( $data );
         $d = $dhl->quote();
-        print_r( $d );
         $this->assertNotEmpty( $d );
     }
  
