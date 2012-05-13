@@ -52,7 +52,6 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data = array_merge( $data, $this->destinationItaly );
         $data['Packages']['1'] = $this->packagesLite;
         $data = array_merge( $data, $this->genericData );
-        print_r( $data );
         $dhl = new Dhlws( $data );
         $d = $dhl->quote();
         $this->assertNotEmpty( $d );
@@ -70,7 +69,6 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data = array_merge( $data, $this->destinationUK );
         $data['Packages']['1'] = $this->packagesLite;
         $data = array_merge( $data, $this->genericData );
-        print_r( $data );
         $dhl = new Dhlws( $data );
         $d = $dhl->quote();
         $this->assertNotEmpty( $d );
@@ -88,7 +86,6 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data = array_merge( $data, $this->destinationUK );
         $data['Packages']['1'] = $this->packagesLite;
         $data = array_merge( $data, $this->genericData );
-        print_r( $data );
         $dhl = new Dhlws( $data );
         $d = $dhl->quote();
         $this->assertNotEmpty( $d );
