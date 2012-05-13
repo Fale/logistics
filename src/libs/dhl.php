@@ -136,10 +136,10 @@ class Dhlws
         /// SoapEnv:Body
         $soapBody = $xml->addChild('soapenv:Body');
         $rateRequest = $soapBody->addChild('rat:RateRequest', '', 'http://scxgxtt.phx-dc.dhl.com/euExpressRateBook/RateMsgRequest');
-        $nodeClientDetail = $rateRequest->addChild('ClientDetail', '', '');
+        $rateRequest->addChild('ClientDetail', '', '');
 
         $nodeRequestedShipment = $rateRequest->addChild('RequestedShipment', '', '');
-        $nodeDropOffType = $nodeRequestedShipment->addChild('DropOffType', 'REQUEST_COURIER');
+        $nodeRequestedShipment->addChild('DropOffType', 'REQUEST_COURIER');
         $this->ship( $nodeRequestedShipment );
         $this->packages( $nodeRequestedShipment );
 
