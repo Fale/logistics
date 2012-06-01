@@ -57,6 +57,24 @@ class Dhl extends PHPUnit_Framework_TestCase
         $this->assertNotEmpty( $d );
     }
  
+    public function testShipIt2It()
+    {
+        $data = Array();
+        $data['Debug'] = 1;
+        $data['AccountID'] = $this->accountIDExpress;
+        $data = array_merge( $data, $this->credentials );
+        $data = array_merge( $data, $this->originData );
+        $data = array_merge( $data, $this->destinationData );
+        $data = array_merge( $data, $this->originItaly );
+        $data = array_merge( $data, $this->destinationItaly );
+        $data['Packages']['1'] = $this->packagesLite;
+        $data = array_merge( $data, $this->genericData );
+        $dhl = new Dhlws( $data );
+        $d = $dhl->ship();
+        print_r( $d );
+        $this->assertNotEmpty( $d );
+    }
+ 
     public function testQuoteIt2Uk()
     {
         $data = Array();
