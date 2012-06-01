@@ -90,6 +90,7 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data = array_merge( $data, $this->genericData );
         $dhl = new Dhlws( $data );
         $d = $dhl->quote();
+        print_r( $d );
         $this->assertNotEmpty( $d );
     }
 
