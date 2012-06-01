@@ -70,7 +70,7 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data['Packages']['1'] = $this->packagesLite;
         $data = array_merge( $data, $this->genericData );
         $dhl = new Dhlws( $data );
-        $d = $dhl->ship();
+        $d = $dhl->shipment();
         print_r( $d );
         $this->assertNotEmpty( $d );
     }
