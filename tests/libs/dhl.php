@@ -34,10 +34,10 @@ class Dhl extends PHPUnit_Framework_TestCase
                                   'Length' => '21',
                                   'Width' => '30',
                                   'Height' => '6' );
-    public $genericData = Array( 'ShipTimeStamp' => '2012-05-10T12:00:00GMT+01:00',
+    public $genericData = Array( 'ShipTimeStamp' => '2012-05-15T12:00:00GMT+01:00',
                                  'Documents' => '0',
                                  'CustomerReferences' => '3-2012-1712' );
-    public $genericDataShip = Array( 'ShipTimeStamp' => '2012-06-10T12:00:00GMT+01:00',
+    public $genericDataShip = Array( 'ShipTimeStamp' => '2012-06-05T12:00:00GMT+01:00',
                                  'Documents' => '0',
                                  'CustomerReferences' => '3-2012-1712' );
     public $accountIDCamion = '771050622';
