@@ -34,7 +34,10 @@ class Dhl extends PHPUnit_Framework_TestCase
                                   'Length' => '21',
                                   'Width' => '30',
                                   'Height' => '6' );
-    public $genericData = Array( 'ShipTimeStamp' => '2012-06-10T12:00:00GMT+01:00',
+    public $genericData = Array( 'ShipTimeStamp' => '2012-05-10T12:00:00GMT+01:00',
+                                 'Documents' => '0',
+                                 'CustomerReferences' => '3-2012-1712' );
+    public $genericDataShip = Array( 'ShipTimeStamp' => '2012-06-10T12:00:00GMT+01:00',
                                  'Documents' => '0',
                                  'CustomerReferences' => '3-2012-1712' );
     public $accountIDCamion = '771050622';
@@ -69,7 +72,7 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data = array_merge( $data, $this->originItaly );
         $data = array_merge( $data, $this->destinationItaly );
         $data['Packages']['1'] = $this->packagesLite;
-        $data = array_merge( $data, $this->genericData );
+        $data = array_merge( $data, $this->genericDataShip );
         $dhl = new Dhlws( $data );
         $d = $dhl->shipment();
         print_r( $d );
