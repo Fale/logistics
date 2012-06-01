@@ -161,7 +161,7 @@ class Dhlws
     {
         $nodeShipmentInfo = $nodeRequestedShipment->addChild('ShipmentInfo');
         $nodeShipmentInfo->addChild('DropOffType', 'REQUEST_COURIER');
-        $nodeShipmentInfo->addChild('ServiceType', 'K');
+        $nodeShipmentInfo->addChild('ServiceType', $this->data['Service']);
         $nodeShipmentInfo->addChild('Account', $this->data['AccountID']);
         $nodeShipmentInfo->addChild('Currency', 'EUR');
         $nodeShipmentInfo->addChild('UnitOfMeasurement', 'SI');

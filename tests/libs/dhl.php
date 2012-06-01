@@ -71,6 +71,7 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data = array_merge( $data, $this->destinationData );
         $data = array_merge( $data, $this->originItaly );
         $data = array_merge( $data, $this->destinationItaly );
+        $data['service'] = "A";
         $data['Packages']['1'] = $this->packagesLite;
         $data = array_merge( $data, $this->genericDataShip );
         $dhl = new Dhlws( $data );
@@ -93,6 +94,25 @@ class Dhl extends PHPUnit_Framework_TestCase
         $data = array_merge( $data, $this->genericData );
         $dhl = new Dhlws( $data );
         $d = $dhl->quote();
+        print_r( $d );
+        $this->assertNotEmpty( $d );
+    }
+
+    public function testShipIt2Uk()
+    {
+        $data = Array();
+        $data['Debug'] = 1;
+        $data['AccountID'] = $this->accountIDExpress;
+        $data = array_merge( $data, $this->credentials );
+        $data = array_merge( $data, $this->originData );
+        $data = array_merge( $data, $this->destinationData );
+        $data = array_merge( $data, $this->originItaly );
+        $data = array_merge( $data, $this->destinationUK );
+        $data['service'] = "K";
+        $data['Packages']['1'] = $this->packagesLite;
+        $data = array_merge( $data, $this->genericData );
+        $dhl = new Dhlws( $data );
+        $d = $dhl->shipment();
         print_r( $d );
         $this->assertNotEmpty( $d );
     }
